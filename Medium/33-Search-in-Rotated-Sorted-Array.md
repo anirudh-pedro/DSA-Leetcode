@@ -13,18 +13,21 @@ You must write an algorithm with **O(log n)** runtime complexity.
 ## Examples
 
 ### Example 1:
+
 ```
 Input: nums = [4,5,6,7,0,1,2], target = 0
 Output: 4
 ```
 
 ### Example 2:
+
 ```
 Input: nums = [4,5,6,7,0,1,2], target = 3
 Output: -1
 ```
 
 ### Example 3:
+
 ```
 Input: nums = [1], target = 0
 Output: -1
@@ -44,7 +47,7 @@ Output: -1
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         l, r = 0, len(nums) - 1
-        
+
         # Step 1: Find the pivot point (smallest element)
         while l < r:
             m = (l + r) // 2
@@ -52,7 +55,7 @@ class Solution:
                 l = m + 1
             else:
                 r = m
-        
+
         # Step 2: Binary search helper function
         def binaryp(left, right):
             while left <= right:
@@ -64,7 +67,7 @@ class Solution:
                 else:
                     right = m - 1
             return -1
-        
+
         # Step 3: Determine which half to search
         if nums[l] <= target <= nums[-1]:
             return binaryp(l, len(nums) - 1)
@@ -77,6 +80,7 @@ class Solution:
 This solution uses a **two-step approach** to achieve O(log n) time complexity:
 
 ### Step 1: Find the Pivot Point
+
 - Use binary search to find the rotation point (the index of the smallest element)
 - Compare `nums[mid]` with `nums[right]`:
   - If `nums[mid] > nums[right]`, the pivot is in the right half
@@ -84,6 +88,7 @@ This solution uses a **two-step approach** to achieve O(log n) time complexity:
 - After this loop, `l` points to the smallest element (pivot)
 
 ### Step 2: Determine Search Range
+
 - The array is effectively split into two sorted subarrays:
   - Left subarray: `nums[0]` to `nums[l-1]`
   - Right subarray: `nums[l]` to `nums[n-1]`
@@ -92,6 +97,7 @@ This solution uses a **two-step approach** to achieve O(log n) time complexity:
   - Otherwise, search in the left subarray
 
 ### Step 3: Binary Search
+
 - Perform standard binary search on the determined subarray
 - Return the index if found, otherwise return -1
 
@@ -107,4 +113,4 @@ This solution uses a **two-step approach** to achieve O(log n) time complexity:
 3. **Range Determination**: Once we know the pivot, we can determine which sorted subarray contains our target
 4. **Standard Binary Search**: Apply regular binary search on the correct subarray
 
-![Algorithm Visualization](image.png)
+![Algorithm Visualization](https://res.cloudinary.com/dfo6ngde0/image/upload/v1751475644/Screenshot_2025-07-02_220727_iuqupo.png)
