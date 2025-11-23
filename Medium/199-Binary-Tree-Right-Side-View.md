@@ -3,7 +3,6 @@
 ![LeetCode](https://img.shields.io/badge/LeetCode-Medium-orange)
 ![Tree](https://img.shields.io/badge/Topic-Tree-blue)
 ![BFS](https://img.shields.io/badge/Topic-BFS-orange)
-![Binary Tree](https://img.shields.io/badge/Topic-Binary_Tree-green)
 
 ## Problem Description
 
