@@ -177,3 +177,6 @@ X O X X  ← Final result
 3. **Iterative DFS**: Use explicit stack to avoid recursion depth issues
 
 ![Surrounded Regions Visualization](https://res.cloudinary.com/dfo6ngde0/image/upload/v1754317872/Screenshot_2025-08-04_200050_n3bmpk.png)
+
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/4a106260-9e2e-4e2e-a067-0cf423b8b199" />
+
